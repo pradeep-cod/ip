@@ -1,0 +1,4 @@
+T|eat ice cream|0
+D|do assignment|0|25th Feb
+E|go out with gf|0|2.00pm|2.02pm
+T|play hockey|0

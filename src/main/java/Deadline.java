@@ -10,4 +10,10 @@ public class Deadline extends Task {
     public String toString() {
         return "[D]" + super.toString() + " (by: " + by + ")";
     }
+    @Override
+    public String toFileString() {
+        return "D|" + super.toFileString() + "|" + by; // Prefix with "D" to indicate Deadline
+    }
+
+
 }
