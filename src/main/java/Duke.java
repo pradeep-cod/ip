@@ -68,6 +68,7 @@ public class Duke {
                         String by = content.substring(index + 4).trim();
                         Deadline newDeadline = new Deadline(description, by);
                         tasks.add(newDeadline);
+
                         System.out.println("____________________________________________________________");
                         System.out.println("Got it. I've added this task:");
                         System.out.println("  " + newDeadline);
@@ -90,6 +91,7 @@ public class Duke {
 
                     Event newEvent = new Event(description, from, to);
                     tasks.add(newEvent);
+
 
                     System.out.println("____________________________________________________________");
                     System.out.println("Got it. I've added this task:");

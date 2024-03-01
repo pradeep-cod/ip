@@ -1,3 +1,4 @@
+
 public class Event extends Task {
 
     protected String from;
@@ -15,6 +16,7 @@ public class Event extends Task {
 
     @Override
     public String toFileString() {
+
         return "E|" + super.toFileString() + "|" + from + "|" + to; // Prefix with "E" to indicate Event
     }
 }

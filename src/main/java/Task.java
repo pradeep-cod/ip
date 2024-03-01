@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+
 public class Task {
     protected String description;
     protected boolean isDone;
@@ -19,6 +21,7 @@ public class Task {
     public void unmarkAsDone() {
         this.isDone = false;
     }
+
     @Override
     public String toString() {
         return "[" + getStatusIcon() + "] " + description;
@@ -30,14 +33,43 @@ public class Task {
         return description + "|" + (isDone ? "1" : "0"); // Example format: "description|status"
     }
 
-    /**
-     * Parses a string from a file into a Task object.
-     *
-     * @param fileString The string read from the file representing a task.
-     * @return The Task object parsed from the string.
-     */
+    //    public static Task fromString(String fileString) {
+//        String[] parts = fileString.split("\\|");
+//        String taskType = parts[0]; // Extract task type
+//        String description = parts[1];
+//        boolean isDone = parts[2].equals("1"); // Extract status
+//
+//        Task task;
+//        switch (taskType) {
+//        case "D":
+//            task = new Deadline(description, (parts[3])); // Create Deadline task
+//            break;
+//        case "E":
+//            task = new Event(description,(parts[3]), (parts[4])); // Create Event task
+//            break;
+//        case "T":
+//            task = new Todo(description); // Create Todo task
+//            break;
+//        default:
+//            // Handle unknown task type
+//            task = null;
+//            break;
+//        }
+//
+//        if (task != null && isDone) {
+//            task.markAsDone(); // Mark task as done if status is '1'
+//        }
+//
+//        return task;
     public static Task fromString(String fileString) {
         String[] parts = fileString.split("\\|");
+
+        // Check if the parts array has enough elements
+        if (parts.length < 3) { // Added this line
+            // Handle the case where the input string format is incorrect
+            return null;
+        }
+
         String taskType = parts[0]; // Extract task type
         String description = parts[1];
         boolean isDone = parts[2].equals("1"); // Extract status
@@ -45,10 +77,20 @@ public class Task {
         Task task;
         switch (taskType) {
         case "D":
-            task = new Deadline(description, parts[3]); // Create Deadline task
+            // Check if the parts array has enough elements for a Deadline task
+            if (parts.length >= 4) { // Added this line
+                task = new Deadline(description, parts[3]); // Create Deadline task
+            } else {
+                task = null;
+            }
             break;
         case "E":
-            task = new Event(description, parts[3], parts[4]); // Create Event task
+            // Check if the parts array has enough elements for an Event task
+            if (parts.length >= 5) { // Added this line
+                task = new Event(description, parts[3], parts[4]); // Create Event task
+            } else {
+                task = null;
+            }
             break;
         case "T":
             task = new Todo(description); // Create Todo task
@@ -65,6 +107,7 @@ public class Task {
 
         return task;
     }
-
-
 }
+
+
+
