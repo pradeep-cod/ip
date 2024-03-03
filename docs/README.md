@@ -33,11 +33,15 @@ Example of usage:
 `todo Buy groceries`
 
 Expected outcome:
+
+```
 ____________________________________________________________
 Got it. I've added this task:
   [T][ ] Buy groceries
 Now you have 1 tasks in the list.
 ____________________________________________________________
+```
+
 
 ### `deadline` - Add a task with a deadline
 
