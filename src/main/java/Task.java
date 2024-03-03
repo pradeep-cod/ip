@@ -33,34 +33,7 @@ public class Task {
         return description + "|" + (isDone ? "1" : "0"); // Example format: "description|status"
     }
 
-    //    public static Task fromString(String fileString) {
-//        String[] parts = fileString.split("\\|");
-//        String taskType = parts[0]; // Extract task type
-//        String description = parts[1];
-//        boolean isDone = parts[2].equals("1"); // Extract status
-//
-//        Task task;
-//        switch (taskType) {
-//        case "D":
-//            task = new Deadline(description, (parts[3])); // Create Deadline task
-//            break;
-//        case "E":
-//            task = new Event(description,(parts[3]), (parts[4])); // Create Event task
-//            break;
-//        case "T":
-//            task = new Todo(description); // Create Todo task
-//            break;
-//        default:
-//            // Handle unknown task type
-//            task = null;
-//            break;
-//        }
-//
-//        if (task != null && isDone) {
-//            task.markAsDone(); // Mark task as done if status is '1'
-//        }
-//
-//        return task;
+    //@@author PradeepM
     public static Task fromString(String fileString) {
         String[] parts = fileString.split("\\|");
 
@@ -107,6 +80,7 @@ public class Task {
 
         return task;
     }
+    //@@author PradeepM
 }
 
 

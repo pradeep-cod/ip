@@ -1,11 +1,10 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
+//hi
 
 public class Duke {
     private static final String FILE_PATH = "./data/duke.txt";
-    //public static Task[] tasks = new Task[100];
-    //public static int taskCount = 0;
     static ArrayList<Task> tasks = new ArrayList<>();
 
 
@@ -21,6 +20,7 @@ public class Duke {
 
         while (true) {
             try {
+                //@@author Nikhil
                 String userInput = scanner.nextLine();
 
                 if ("bye".equalsIgnoreCase(userInput)) {
@@ -56,8 +56,9 @@ public class Duke {
                     System.out.println("  " + newTodo);
                     System.out.println("Now you have " + tasks.size() + " tasks in the list.");
                     System.out.println("____________________________________________________________");
+                    //@author Nikhil
                 } else if (userInput.startsWith("deadline")) {
-
+                   //@@author Nikhil
                     String content = userInput.substring(8).trim();
                     int index = content.indexOf("/by");
 
@@ -74,8 +75,10 @@ public class Duke {
                         System.out.println("  " + newDeadline);
                         System.out.println("Now you have " + tasks.size() + " tasks in the list.");
                         System.out.println("____________________________________________________________");
+                        //@@author Nikhil
                     }
                 } else if (userInput.startsWith("event")) {
+                    //@@author PradeepM
 
                     String content = userInput.substring(5).trim();
 
@@ -98,7 +101,9 @@ public class Duke {
                     System.out.println("  " + newEvent);
                     System.out.println("Now you have " + tasks.size() + " tasks in the list.");
                     System.out.println("____________________________________________________________");
+                    //@@author PradeepM
                 } else if (userInput.startsWith("delete")) {
+                    //@@author PradeepM
                     int taskNumber;
                     try {
                         taskNumber = Integer.parseInt(userInput.split(" ")[1]);
@@ -124,6 +129,7 @@ public class Duke {
                         System.out.println(de.getMessage());
                         System.out.println("____________________________________________________________");
                     }
+                    //@@author PradeepM
                 } else {
                     throw new DukeException("☹ OOPS!!! What is that? I don't know what is that? What is the meaning :-(");
                 }
@@ -140,6 +146,8 @@ public class Duke {
         System.out.println("____________________________________________________________");
     }
 
+
+    //@@author Nikhil
     public static void processTask(String userInput, ArrayList<Task> tasks, boolean mark) {
         int taskNumber;
         try {
@@ -166,7 +174,9 @@ public class Duke {
             System.out.println("That task doesn't exist!");
         }
     }
+    //@@author Nikhil
 
+    //@@author PradeepM
     public static void saveTasksToFile() {
         try {
             File file = new File(FILE_PATH);
@@ -183,9 +193,12 @@ public class Duke {
             System.err.println("Error saving tasks to file: " + e.getMessage());
         }
     }
+    //@@author PradeepM
 
     // Method to load tasks from a file
     // Method to load tasks from a file
+
+    //@@author Nikhil
     public static void loadTasksFromFile() {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line;
@@ -208,5 +221,6 @@ public class Duke {
             System.err.println("Error loading tasks from file: " + e.getMessage());
         }
     }
+    //@@author Nikhil
 }
 
