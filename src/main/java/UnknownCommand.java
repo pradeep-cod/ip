@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class UnknownCommand extends Command {
     private String command;
 
@@ -6,8 +8,9 @@ public class UnknownCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) {
+    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) {
         ui.printError("Unknown command: " + command);
+        return null;
     }
 
     @Override

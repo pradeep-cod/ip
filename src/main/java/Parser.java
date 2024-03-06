@@ -19,6 +19,9 @@ public class Parser {
             return new DeleteCommand(Integer.parseInt(parts[1]));
         } else if ("bye".equalsIgnoreCase(command)) {
             return new ExitCommand();
+        } else if ("find".equalsIgnoreCase(command)) {
+            // Assuming FindCommand constructor takes a keyword as a parameter
+            return new FindCommand(fullCommand.substring(4).trim());
         } else {
             return new UnknownCommand(fullCommand);
         }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class AddEventCommand extends Command {
     private String description;
     private String from;
@@ -14,10 +16,11 @@ public class AddEventCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         Event newEvent = new Event(description, from, to);
         tasks.appendTask(newEvent);
         ui.printTaskAdded(newEvent, tasks.retrieveAllTasks());
+        return null;
     }
 
     @Override

@@ -31,4 +31,21 @@ public class TaskList {
         return tasks;
     }
 
+    public ArrayList<Task> findTasks(String keyword) {
+        ArrayList<Task> matchingTasks = new ArrayList<>();
+        int taskIndex = 0; // Initialize a counter to iterate through tasks
+
+        // Iterate through tasks until no more matches are found
+        while (taskIndex < tasks.size()) {
+            Task task = tasks.get(taskIndex); // Get the current task
+            if (task.description.toLowerCase().contains(keyword.toLowerCase())) {
+                matchingTasks.add(task); // Add the matching task to the list
+            }
+            taskIndex++; // Increment the counter to move to the next task
+        }
+
+        return matchingTasks;
+    }
+
+
 }
