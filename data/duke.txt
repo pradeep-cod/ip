@@ -1,3 +1,0 @@
-T|read book|0
-D|submit|0|2nd july
-T|me|0
