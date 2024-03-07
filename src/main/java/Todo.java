@@ -1,5 +1,4 @@
 public class Todo extends Task {
-
     public Todo(String description) {
         super(description);
     }
@@ -9,9 +8,9 @@ public class Todo extends Task {
         return "[T]" + super.toString();
     }
 
+    @Override
     public String toFileString() {
-        return "T|" + super.toFileString(); // Prefix with "T" to indicate Todo
+        return "T|" + super.toFileString();
     }
-
-
 }
+

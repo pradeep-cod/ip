@@ -1,6 +1,4 @@
-
 public class Event extends Task {
-
     protected String from;
     protected String to;
 
@@ -9,6 +7,7 @@ public class Event extends Task {
         this.from = from;
         this.to = to;
     }
+
     @Override
     public String toString() {
         return "[E]" + super.toString() + " (from: " + from + " to: " + to + ")";
@@ -16,7 +15,6 @@ public class Event extends Task {
 
     @Override
     public String toFileString() {
-
-        return "E|" + super.toFileString() + "|" + from + "|" + to; // Prefix with "E" to indicate Event
+        return "E|" + super.toFileString() + "|" + from + "|" + to;
     }
 }
