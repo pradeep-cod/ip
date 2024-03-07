@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * The task number is used to identify the task to be deleted.
  * </p>
  */
-
 public class DeleteCommand extends Command {
     private int taskNumber;
 

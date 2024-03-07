@@ -7,7 +7,6 @@ import java.util.ArrayList;
  * The task number is used to identify the task to be marked as done.
  * </p>
  */
-
 public class MarkCommand extends Command {
     private int taskNumber;
 

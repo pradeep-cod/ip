@@ -1,4 +1,3 @@
-
 import java.util.ArrayList;
 
 /**
@@ -50,6 +49,7 @@ public class AddDeadlineCommand extends Command {
     public boolean isExit() {
         return false;
     }
+
 }
 
 

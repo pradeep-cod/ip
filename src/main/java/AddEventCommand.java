@@ -56,5 +56,6 @@ public class AddEventCommand extends Command {
     public boolean isExit() {
         return false;
     }
+
 }
 

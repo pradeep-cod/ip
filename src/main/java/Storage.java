@@ -79,7 +79,6 @@ public class Storage {
             throw new DukeException("Error saving tasks to file: " + e.getMessage());
         }
     }
-
-    }
+}
 
 

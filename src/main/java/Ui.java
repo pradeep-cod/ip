@@ -6,7 +6,6 @@ import java.util.ArrayList;
  * It provides methods for printing messages to the console, reading user input, and managing tasks.
  */
 public class Ui {
-
     private Scanner scanner;
 
     /**
@@ -102,19 +101,16 @@ public class Ui {
         System.out.println("Now you have " + tasks.size() + " tasks in the list.");
         System.out.println("____________________________________________________________");
     }
-
     public void printTasksMarked(Task task, ArrayList<Task> tasks) {
         System.out.println("I have marked this task as done.");
         System.out.println(" " + task);
         System.out.println("____________________________________________________________");
     }
-
     public void printTasksUnmarked(Task task, ArrayList<Task> tasks) {
         System.out.println("I have unmarked this task.");
         System.out.println(" " + task);
         System.out.println("____________________________________________________________");
     }
-
     public void printInvalidTaskNumber(int currentTaskCount) {
         System.out.println("Invalid task number! You only have " + currentTaskCount + " tasks.");
     }

@@ -1,11 +1,9 @@
 import java.util.ArrayList;
 public class FindCommand extends Command {
     private String keyword;
-
     public FindCommand(String keyword) {
         this.keyword = keyword;
     }
-
     @Override
     public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) {
         ArrayList<Task> matchingTasks = tasks.findTasks(keyword);
@@ -21,7 +19,6 @@ public class FindCommand extends Command {
                 System.out.println((i + 1) + "." + matchingTasks.get(i));
                 i++;
             }
-
             ui.showLine();
         }
         return matchingTasks;

@@ -1,7 +1,6 @@
 /**
  * This class is responsible for parsing user commands into executable commands.
  * It interprets user input and maps it to specific Command objects based on the input.
- * @author Your Name
  */
 public class Parser {
 
