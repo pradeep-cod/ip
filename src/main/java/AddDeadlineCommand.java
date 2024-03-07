@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class AddDeadlineCommand extends Command {
     private String description;
     private String by;
@@ -9,13 +11,14 @@ public class AddDeadlineCommand extends Command {
     }
 
     @Override
-    public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         if (by.isEmpty()) {
             throw new DukeException("Please use '/by' to specify the deadline time.");
         }
         Deadline newDeadline = new Deadline(description, by);
         tasks.appendTask(newDeadline);
         ui.printTaskAdded(newDeadline, tasks.retrieveAllTasks());
+        return null;
     }
 
     @Override
