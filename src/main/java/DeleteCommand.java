@@ -33,8 +33,8 @@ public class DeleteCommand extends Command {
      */
     public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
         if (taskNumber >= 1 && taskNumber <= tasks.size()) {
-            Task task = tasks.fetchTaskByIndex(taskNumber - 1); // Assuming taskNumber is 1-based
-            tasks.removeTask(taskNumber - 1); // Adjusted for 0-based index
+            Task task = tasks.fetchTaskByIndex(taskNumber); // Assuming taskNumber is 1-based
+            tasks.removeTask(taskNumber); // Adjusted for 0-based index
             ui.printTaskRemoved(task, tasks.retrieveAllTasks());
         } else {
             ui.printInvalidTaskNumber(tasks.size()); // Assuming this method exists to print the current number of tasks
