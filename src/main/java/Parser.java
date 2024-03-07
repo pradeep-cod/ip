@@ -1,4 +1,16 @@
+/**
+ * This class is responsible for parsing user commands into executable commands.
+ * It interprets user input and maps it to specific Command objects based on the input.
+ * @author Your Name
+ */
 public class Parser {
+
+    /**
+     * Parses a full command string into a Command object.
+     * @param fullCommand the full command string entered by the user
+     * @return a Command object representing the user's command
+     * @throws DukeException if the command is not recognized or if there's an error in parsing
+     */
     public static Command parse(String fullCommand) throws DukeException {
         String[] parts = fullCommand.split(" ");
         String command = parts[0];
@@ -24,3 +36,4 @@ public class Parser {
         }
     }
 }
+
