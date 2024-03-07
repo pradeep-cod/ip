@@ -14,6 +14,18 @@ Enables users to add a task with a deadline to the list.
 
 Facilitates users in adding an event task to the list.
 
+### Find a Keyword
+
+Facilitates users to find for the task easily.
+
+### Mark a task
+
+Allows users to mark their task as done.
+
+### Unmark a task
+
+Allows users to unmark their task when not done.
+
 ### Delete
 
 Allows users to delete a task from the list.
@@ -82,6 +94,58 @@ ____________________________________________________________
 ```
 
 
+### `find` - Search for a task
+
+Searches for tasks in the list based on keywords
+
+Example of usage:
+
+`find book`
+
+Expected outcome:
+```
+____________________________________________________________
+Here are the matching tasks in your list:
+1.[T][X] read book
+2.[D][X] return book (by: June 6th)
+____________________________________________________________
+```
+
+
+### `mark` - Marks a task as done
+
+Marks a task as done in the list
+
+Example of usage:
+
+`mark 2`
+
+Expected outcome:
+```
+____________________________________________________________
+I have marked this task as done.
+ [X] return book
+____________________________________________________________
+```
+
+
+### `unmark` - unmarks a task 
+
+Unmarks a task as done in the list
+
+Example of usage:
+
+`unmark 2`
+
+Expected outcome:
+```
+____________________________________________________________
+I have unmarked this task.
+ [ ] return book
+____________________________________________________________
+```
+
+
 ### `delete` - Delete a task
 
 Deletes a task from the list.
@@ -113,7 +177,7 @@ Expected Outcome:
 ____________________________________________________________
 Here are the tasks in your list:
 [D][ ] Complete report (by: Mar 10 2024)
-[E][] Project meeting (from: 2 Mar 2024 14:00 to: 2 Mar 2024 15:00)
+[E][ ] Project meeting (from: 2 Mar 2024 14:00 to: 2 Mar 2024 15:00)
 Now you have 3 task(s) in the list.
 ____________________________________________________________
 ```
