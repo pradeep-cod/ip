@@ -71,7 +71,7 @@ public class Storage {
                 throw new DukeException("Error creating new file: " + e.getMessage());
             }
         }
-        try (FileWriter writer = new FileWriter(file, true)) { // true for append mode
+        try (FileWriter writer = new FileWriter(file)) { // true for append mode
             for (Task task : tasks) {
                 writer.write(task.toFileString() + "\n");
             }

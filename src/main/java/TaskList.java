@@ -81,5 +81,8 @@ public class TaskList {
         return matchingTasks;
     }
 
+    public int size() {
+        return tasks.size();
+    }
 }
 

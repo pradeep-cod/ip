@@ -31,14 +31,13 @@ public class DeleteCommand extends Command {
      * @param storage the storage to save the updated task list
      * @throws DukeException if the task number is invalid or does not correspond to a task in the list
      */
-    @Override
     public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
-        Task task = tasks.fetchTaskByIndex(taskNumber);
-        if (task != null) {
-            tasks.removeTask(taskNumber);
+        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+            Task task = tasks.fetchTaskByIndex(taskNumber - 1); // Assuming taskNumber is 1-based
+            tasks.removeTask(taskNumber - 1); // Adjusted for 0-based index
             ui.printTaskRemoved(task, tasks.retrieveAllTasks());
         } else {
-            throw new DukeException("Invalid task number!");
+            ui.printInvalidTaskNumber(tasks.size()); // Assuming this method exists to print the current number of tasks
         }
         return null;
     }

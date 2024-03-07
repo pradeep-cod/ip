@@ -115,6 +115,9 @@ public class Ui {
         System.out.println("____________________________________________________________");
     }
 
+    public void printInvalidTaskNumber(int currentTaskCount) {
+        System.out.println("Invalid task number! You only have " + currentTaskCount + " tasks.");
+    }
 
 
 }
