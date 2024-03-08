@@ -14,8 +14,11 @@ public class AddDeadlineCommand extends Command {
      *
      * @param command the command string containing the task description and deadline time
      */
-    public AddDeadlineCommand(String command) {
+    public AddDeadlineCommand(String command) throws DukeException {
         String[] parts = command.split("/by");
+        if (parts.length < 2) {
+            throw new DukeException("Please use the format: deadline [description] /by [add time]");
+        }
         this.description = parts[0].trim();
         this.by = parts.length > 1 ? parts[1].trim() : "";
     }

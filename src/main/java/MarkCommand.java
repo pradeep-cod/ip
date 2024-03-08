@@ -32,8 +32,8 @@ public class MarkCommand extends Command {
      */
     @Override
     public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
-        Task task = tasks.fetchTaskByIndex(taskNumber);
-        if (task != null) {
+        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+            Task task = tasks.fetchTaskByIndex(taskNumber);
             task.markAsDone();
             ui.showLine();
             ui.printTasksMarked(task, tasks.retrieveAllTasks());

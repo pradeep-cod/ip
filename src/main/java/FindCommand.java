@@ -5,9 +5,11 @@ public class FindCommand extends Command {
         this.keyword = keyword;
     }
     @Override
-    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) {
+    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException{
         ArrayList<Task> matchingTasks = tasks.findTasks(keyword);
-
+        if (keyword.isEmpty()) {
+            throw new DukeException("ADD A KEYWORD!!!!!");
+        }
         if (matchingTasks.isEmpty()) {
             ui.printError("Keywords not found: " + keyword);
         } else {

@@ -33,8 +33,8 @@ public class UnmarkCommand extends Command {
      */
     @Override
     public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
-        Task task = tasks.fetchTaskByIndex(taskNumber);
-        if (task != null) {
+        if (taskNumber >= 1 && taskNumber <= tasks.size()) {
+            Task task = tasks.fetchTaskByIndex(taskNumber);
             task.unmarkAsDone();
             ui.showLine();
             ui.printTasksUnmarked(task, tasks.retrieveAllTasks());

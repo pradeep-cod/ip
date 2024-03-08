@@ -30,7 +30,11 @@ public class AddTodoCommand extends Command {
      * @param storage the storage to save the task list
      */
     @Override
-    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) {
+    public ArrayList<Task> execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
+        if (description.isEmpty()) {
+            throw new DukeException("The task's description is empty! Please specify and be responsible for your tasks");
+        }
+
         Todo newTodo = new Todo(description);
         tasks.appendTask(newTodo);
         ui.printTaskAdded(newTodo, tasks.retrieveAllTasks());
